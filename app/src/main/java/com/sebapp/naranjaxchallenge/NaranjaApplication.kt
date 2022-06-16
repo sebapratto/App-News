@@ -1,5 +1,8 @@
 package com.sebapp.naranjaxchallenge
 
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
 /**
  *   16,junio,2022
  *
@@ -7,9 +10,5 @@ package com.sebapp.naranjaxchallenge
  *           Sebastian Pratto (Misiones, Arg.)
  */
 
-object Constants {
-
-    const val BASE_URL = ""
-    const val API_KEY = ""
-
-}
+@HiltAndroidApp
+class NaranjaApplication : Application()
