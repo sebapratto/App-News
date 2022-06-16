@@ -15,9 +15,9 @@ import retrofit2.http.Path
 interface ApiClient {
 
     @GET("/search?api-key={key}")
-    suspend fun getAllNews(@Path("key") key: String): Response<List<NewsModel>>
+    suspend fun getAllNews(): Response<List<NewsModel>>
 
     @GET("{url}")
-    suspend fun getItemNews(@Path("url") url: String): Response<List<NewsDetailModel>>
+    suspend fun getItemNews(@Path("url") url: String): Response<NewsDetailModel>
 
 }
