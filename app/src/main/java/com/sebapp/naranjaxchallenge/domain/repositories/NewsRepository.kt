@@ -2,9 +2,7 @@ package com.sebapp.naranjaxchallenge.domain.repositories
 
 import com.sebapp.naranjaxchallenge.data.network.ApiClient
 import com.sebapp.naranjaxchallenge.domain.model.NewsDetailModel
-import com.sebapp.naranjaxchallenge.domain.model.NewsDetailResult
-import com.sebapp.naranjaxchallenge.domain.model.NewsModel
-import com.sebapp.naranjaxchallenge.domain.model.NewsResult
+import com.sebapp.naranjaxchallenge.domain.model.News
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.flow
@@ -33,11 +31,11 @@ class NewsRepository(
 
     fun getNews(
         query: String
-    ): Flow<List<NewsModel>?> = flow {
+    ): Flow<List<News>?> = flow {
 
-        val response = newsApi.getAllNews("query")
+        val response = newsApi.getAllNews()
         if (response.isSuccessful) {
-            val newsList: List<NewsModel>? = response.body()
+            val newsList: List<News>? = response.body()
             emit(newsList)
         }
 

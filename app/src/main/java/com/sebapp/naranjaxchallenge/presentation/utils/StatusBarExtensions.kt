@@ -11,7 +11,3 @@ import androidx.core.content.ContextCompat
  *           Sebastian Pratto (Misiones, Arg.)
  */
 
-fun Window.changeStatusBarColor(color: Int) {
-    this.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-    this.statusBarColor = ContextCompat.getColor(context, color)
-}

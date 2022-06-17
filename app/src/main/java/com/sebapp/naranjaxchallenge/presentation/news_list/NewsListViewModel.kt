@@ -2,10 +2,14 @@ package com.sebapp.naranjaxchallenge.presentation.news_list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sebapp.naranjaxchallenge.domain.model.NewsModel
+import com.sebapp.naranjaxchallenge.data.data_store.SettingsRepository
+import com.sebapp.naranjaxchallenge.domain.model.News
+import com.sebapp.naranjaxchallenge.domain.repositories.NewsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -17,15 +21,15 @@ import javax.inject.Inject
  */
 
 @HiltViewModel
-class NoteListViewModel
+class NewsListViewModel
 @Inject
 constructor(
     private val newsRepository: NewsRepository,
     private val settingsRepository: SettingsRepository
 ): ViewModel() {
 
-    private var _newsList = MutableStateFlow<List<NewsModel>>(emptyList())
-    val noteList: StateFlow<List<NewsModel>> = _newsList
+    private var _newsList = MutableStateFlow<List<News>>(emptyList())
+    val newsList: StateFlow<List<News>> = _newsList
 
     private var _darkMode = MutableStateFlow<Boolean>(false)
     val darkMode: StateFlow<Boolean> = _darkMode
@@ -36,13 +40,16 @@ constructor(
     private var _searchQuery = MutableStateFlow("")
 
     init {
-        getNotes()
+        getNews()
         getSettings()
     }
 
-    fun getNotes() {
-        newsRepository.getNotes(_searchQuery.value).onEach { newsList ->
-            _newsList.value = newsList
+    fun getNews() {
+        newsRepository.getNews(_searchQuery.value).onEach { newsList ->
+            if (newsList != null) {
+                _newsList.value = newsList
+            }
+
         }.launchIn(viewModelScope)
 
     }
@@ -52,14 +59,9 @@ constructor(
             _darkMode.value = isDarkMode
         }.launchIn(viewModelScope)
 
-        settingsRepository.readNotesLayoutValue().onEach { isLinearLayoutMode ->
+        settingsRepository.readLayoutValue().onEach { isLinearLayoutMode ->
             _linearLayoutMode.value = isLinearLayoutMode
         }.launchIn(viewModelScope)
-    }
-
-    fun updateQuery(newQuery: String) {
-        _searchQuery.value = newQuery
-        getNotes()
     }
 
     fun toggleDarkMode() {
@@ -70,7 +72,7 @@ constructor(
 
     fun toggleLayoutMode() {
         viewModelScope.launch {
-            settingsRepository.toggleNotesLayout()
+            settingsRepository.toggleLayout()
         }
     }
 
