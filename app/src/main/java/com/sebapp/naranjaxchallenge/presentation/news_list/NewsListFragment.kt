@@ -5,20 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SearchView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.sebapp.naranjaxchallenge.R
 import com.sebapp.naranjaxchallenge.databinding.FragmentNewsListBinding
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class NewsListFragment : Fragment() {
-
 
     private var _binding: FragmentNewsListBinding? = null
     private val binding get() = _binding!!
@@ -81,9 +80,10 @@ class NewsListFragment : Fragment() {
             }
         }
 
-        newsListAdapter.setOnItemClickListener { newsId ->
-
-        }
+//        newsListAdapter.setOnItemClickListener { newsId ->
+//            val action = NewsListFragmentDirections.actionNoteListFragmentToNoteDetailFragment(newsId)
+//            findNavController().navigate(action)
+//        }
 
     }
 

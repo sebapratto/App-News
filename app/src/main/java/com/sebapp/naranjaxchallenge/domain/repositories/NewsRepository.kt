@@ -30,7 +30,6 @@ class NewsRepository(
     }
 
     fun getNews(
-        query: String
     ): Flow<List<News>?> = flow {
 
         val response = newsApi.getAllNews()

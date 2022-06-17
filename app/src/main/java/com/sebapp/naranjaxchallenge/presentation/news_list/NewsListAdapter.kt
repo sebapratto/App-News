@@ -49,9 +49,6 @@ class NewsListAdapter : ListAdapter<News, NewsListAdapter.NewsViewHolder>(NewsDi
         private val image = itemBinding.imageViewThumbnail
         private val content = itemBinding.textViewContent
 
-        private val backgroundColor = container.background as GradientDrawable
-        private val strokeColor = container.background as GradientDrawable
-
         private var currentNews: News? = null
 
         init {

@@ -37,7 +37,6 @@ constructor(
     private var _linearLayoutMode = MutableStateFlow<Boolean>(true)
     val linearLayoutMode: StateFlow<Boolean> = _linearLayoutMode
 
-    private var _searchQuery = MutableStateFlow("")
 
     init {
         getNews()
@@ -45,7 +44,7 @@ constructor(
     }
 
     fun getNews() {
-        newsRepository.getNews(_searchQuery.value).onEach { newsList ->
+        newsRepository.getNews().onEach { newsList ->
             if (newsList != null) {
                 _newsList.value = newsList
             }

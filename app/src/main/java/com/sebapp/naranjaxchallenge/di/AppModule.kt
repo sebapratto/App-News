@@ -5,6 +5,9 @@ import android.provider.SyncStateContract
 import com.sebapp.naranjaxchallenge.Constants
 import com.sebapp.naranjaxchallenge.Constants.BASE_URL
 import com.sebapp.naranjaxchallenge.data.network.ApiClient
+import com.sebapp.naranjaxchallenge.domain.repositories.NewsRepository
+import com.sebapp.naranjaxchallenge.domain.repositories.SettingsRepository
+import com.sebapp.naranjaxchallenge.presentation.news_list.NewsListAdapter
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -40,7 +43,7 @@ object AppModule {
         return retrofit.create(ApiClient::class.java)
     }
 
-    /*@Provides
+    @Provides
     @Singleton
     fun provideNewsListAdapter() = NewsListAdapter()
 
@@ -56,7 +59,7 @@ object AppModule {
         application: Application
     ): SettingsRepository {
         return SettingsRepository(application)
-    }*/
+    }
 
 
 }

@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.news_detail.NewsDetailFragment">
+    android:id="@+id/newsDetailFragment"
+    android:background="@color/app_bg_screen_color">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="Aqui el detalle de las News.." />
 
 </FrameLayout>

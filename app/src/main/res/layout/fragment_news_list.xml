@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_bg_screen_color"
-    tools:context=".presentation.news_list.NewsListFragment">
+    android:background="@color/app_bg_screen_color" >
 
     <LinearLayout
         android:id="@+id/linearLayout_topBar"
