@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.Flow
  * Created by
  *           Sebastian Pratto (Misiones, Arg.)
  */
-interface SettingsRepository {
+interface SettingsDataStore {
 
     suspend fun toggleDarkMode()
 

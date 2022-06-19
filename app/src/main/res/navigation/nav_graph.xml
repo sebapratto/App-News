@@ -20,6 +20,12 @@
         android:name="com.sebapp.naranjaxchallenge.presentation.news_detail.NewsDetailFragment"
         android:label="NewsDetailFragment" >
 
+        <argument
+            android:name="newsId"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+
     </fragment>
 
 

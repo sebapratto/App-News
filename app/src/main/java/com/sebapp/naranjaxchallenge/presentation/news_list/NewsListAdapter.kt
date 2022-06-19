@@ -1,6 +1,7 @@
 package com.sebapp.naranjaxchallenge.presentation.news_list
 
 import android.graphics.drawable.GradientDrawable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -44,7 +45,6 @@ class NewsListAdapter : ListAdapter<News, NewsListAdapter.NewsViewHolder>(NewsDi
         itemBinding: LayoutNewsItemBinding
     ): RecyclerView.ViewHolder(itemBinding.root) {
 
-        private val container = itemBinding.noteContainer
         private val title = itemBinding.textViewTitle
         private val image = itemBinding.imageViewThumbnail
         private val content = itemBinding.textViewContent
@@ -67,8 +67,10 @@ class NewsListAdapter : ListAdapter<News, NewsListAdapter.NewsViewHolder>(NewsDi
 
             if(news.id.isNotEmpty()) {
                 title.text = news.webTitle
-                image.load(news.fields[0].thumbnail)
-                content.text = news.fields[0].trailText
+                image.load(news.fields.thumbnail)
+                content.text = news.fields.trailText
+            }else{
+                Log.d("debuging", "bind: fin bind(news: News) in NewListAdapter isEmpety")
             }
 
         }

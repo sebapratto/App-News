@@ -7,7 +7,7 @@ import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.emptyPreferences
 import androidx.datastore.preferences.preferencesDataStore
-import com.sebapp.naranjaxchallenge.data.data_store.SettingsRepository
+import com.sebapp.naranjaxchallenge.data.data_store.SettingsDataStore
 import com.sebapp.naranjaxchallenge.domain.utils.DataStoreKeys.Companion.DARK_MODE_KEY
 import com.sebapp.naranjaxchallenge.domain.utils.DataStoreKeys.Companion.LAYOUT_MODE_KEY
 import kotlinx.coroutines.flow.Flow
@@ -25,7 +25,7 @@ const val SETTING_PREFERENCES_NAME: String = "settings_preferences"
 
 class SettingsRepository(
     val context: Application
-): SettingsRepository {
+): SettingsDataStore {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
         SETTING_PREFERENCES_NAME

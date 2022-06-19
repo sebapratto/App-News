@@ -8,7 +8,7 @@ package com.sebapp.naranjaxchallenge.domain.model
  */
 data class NewsDetailModel(
     val status: String, // "ok"
-    val results: List<NewsDetailResult>
+    val results: NewsDetailResult
 )
 
 data class NewsDetailResult(

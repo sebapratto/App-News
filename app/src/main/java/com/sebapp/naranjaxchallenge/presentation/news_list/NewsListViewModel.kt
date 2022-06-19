@@ -1,10 +1,11 @@
 package com.sebapp.naranjaxchallenge.presentation.news_list
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sebapp.naranjaxchallenge.data.data_store.SettingsRepository
 import com.sebapp.naranjaxchallenge.domain.model.News
 import com.sebapp.naranjaxchallenge.domain.repositories.NewsRepository
+import com.sebapp.naranjaxchallenge.domain.repositories.SettingsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
