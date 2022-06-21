@@ -7,6 +7,8 @@ package com.sebapp.naranjaxchallenge
  *           Sebastian Pratto (Misiones, Arg.)
  */
 
+    /**   URL for endpoints     */
+
 object Constants {
 
     const val BASE_URL = "https://content.guardianapis.com/"

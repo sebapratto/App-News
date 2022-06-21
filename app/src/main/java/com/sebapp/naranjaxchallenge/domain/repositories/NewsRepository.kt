@@ -15,9 +15,12 @@ import kotlinx.coroutines.flow.flow
  *           Sebastian Pratto (Misiones, Arg.)
  */
 
+    /** Get from api */
+
 class NewsRepository(
     private val newsApi: ApiClient
 ){
+
 
     fun getNewsById(
         newsId: String

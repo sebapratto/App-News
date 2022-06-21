@@ -3,6 +3,13 @@ package com.sebapp.naranjaxchallenge.domain.model
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ *   21,junio,2022
+ *
+ * Created by
+ *           Sebastian Pratto (Misiones, Arg.)
+ */
+
 data class NewsDetailResponse(
     @SerializedName("response") val response: ResponseItem
 )

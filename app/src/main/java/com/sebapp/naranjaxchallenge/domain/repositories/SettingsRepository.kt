@@ -21,6 +21,9 @@ import java.io.IOException
  * Created by
  *           Sebastian Pratto (Misiones, Arg.)
  */
+
+    /**  Get-Set Config screen */
+
 const val SETTING_PREFERENCES_NAME: String = "settings_preferences"
 
 class SettingsRepository(

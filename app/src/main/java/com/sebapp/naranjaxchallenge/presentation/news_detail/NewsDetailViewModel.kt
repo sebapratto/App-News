@@ -23,6 +23,7 @@ import javax.inject.Inject
  * Created by
  *           Sebastian Pratto (Misiones, Arg.)
  */
+
 @HiltViewModel
 class NewsDetailViewModel
 @Inject

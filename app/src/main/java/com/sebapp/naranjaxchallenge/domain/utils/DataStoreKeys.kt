@@ -8,6 +8,9 @@ import androidx.datastore.preferences.core.booleanPreferencesKey
  * Created by
  *           Sebastian Pratto (Misiones, Arg.)
  */
+
+ /**    data preferences for settings    */
+
 class DataStoreKeys {
 
     companion object {

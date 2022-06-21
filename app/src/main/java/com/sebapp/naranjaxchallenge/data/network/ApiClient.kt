@@ -19,9 +19,11 @@ import retrofit2.http.Path
 
 interface ApiClient {
 
+    /** Endpoint to list news */
     @GET("${ALL_NEWS}&${API_KEY}")
     suspend fun getAllNews(): Response<NewsResponse>
 
+    /** Endpoint to item news */
     @GET("{url}${ITEM_FILTER}&${API_KEY}")
     suspend fun getItemNews(@Path("url",encoded = true) url: String): Response<NewsDetailResponse>
 

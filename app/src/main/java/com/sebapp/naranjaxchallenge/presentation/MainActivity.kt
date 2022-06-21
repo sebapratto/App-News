@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     /** Set window style */
+
     private fun setWindowStyle() {
 
         val window = getWindow()
