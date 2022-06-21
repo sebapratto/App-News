@@ -1,6 +1,5 @@
 package com.sebapp.naranjaxchallenge.presentation.news_list
 
-import android.graphics.drawable.GradientDrawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.sebapp.naranjaxchallenge.databinding.LayoutNewsItemBinding
-import com.sebapp.naranjaxchallenge.domain.model.News
+import com.sebapp.naranjaxchallenge.domain.model.Results
 
 /**
  *   17,junio,2022
@@ -18,7 +17,7 @@ import com.sebapp.naranjaxchallenge.domain.model.News
  *           Sebastian Pratto (Misiones, Arg.)
  */
 
-class NewsListAdapter : ListAdapter<News, NewsListAdapter.NewsViewHolder>(NewsDiffUtil) {
+class NewsListAdapter : ListAdapter<Results, NewsListAdapter.NewsViewHolder>(NewsDiffUtil) {
 
     private var onItemClickListener: ((String) -> Unit)? = null
 
@@ -47,9 +46,9 @@ class NewsListAdapter : ListAdapter<News, NewsListAdapter.NewsViewHolder>(NewsDi
 
         private val title = itemBinding.textViewTitle
         private val image = itemBinding.imageViewThumbnail
-        private val content = itemBinding.textViewContent
+        private val date = itemBinding.textViewDate
 
-        private var currentNews: News? = null
+        private var currentNews: Results? = null
 
         init {
             itemView.setOnClickListener {
@@ -61,16 +60,14 @@ class NewsListAdapter : ListAdapter<News, NewsListAdapter.NewsViewHolder>(NewsDi
             }
         }
 
-        fun bind(news: News) {
+        fun bind(news: Results) {
 
             currentNews = news
 
             if(news.id.isNotEmpty()) {
                 title.text = news.webTitle
                 image.load(news.fields.thumbnail)
-                content.text = news.fields.trailText
-            }else{
-                Log.d("debuging", "bind: fin bind(news: News) in NewListAdapter isEmpety")
+                date.text = news.webPublicationDate.replace("T","").replace("Z"," ")
             }
 
         }
@@ -79,12 +76,12 @@ class NewsListAdapter : ListAdapter<News, NewsListAdapter.NewsViewHolder>(NewsDi
 
 }
 
-object NewsDiffUtil: DiffUtil.ItemCallback<News>() {
-    override fun areItemsTheSame(oldItem: News, newItem: News): Boolean {
+object NewsDiffUtil: DiffUtil.ItemCallback<Results>() {
+    override fun areItemsTheSame(oldItem: Results, newItem: Results): Boolean {
         return oldItem.id == newItem.id
     }
 
-    override fun areContentsTheSame(oldItem: News, newItem: News): Boolean {
+    override fun areContentsTheSame(oldItem: Results, newItem: Results): Boolean {
         return oldItem == newItem
     }
 }

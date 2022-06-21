@@ -11,12 +11,12 @@
 
         <action
             android:id="@+id/action_newsListFragment_to_newsDetailFragment"
-            app:destination="@id/newsDetailFragment" />
+            app:destination="@id/newsDetailFragment_graph" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/newsDetailFragment"
+        android:id="@+id/newsDetailFragment_graph"
         android:name="com.sebapp.naranjaxchallenge.presentation.news_detail.NewsDetailFragment"
         android:label="NewsDetailFragment" >
 

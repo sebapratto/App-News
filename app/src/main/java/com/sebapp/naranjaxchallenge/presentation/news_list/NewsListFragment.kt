@@ -1,14 +1,11 @@
 package com.sebapp.naranjaxchallenge.presentation.news_list
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -64,6 +61,7 @@ class NewsListFragment : Fragment() {
                 } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
                 }
+                setImageViewLogo(isDarkMode)
             }
         }
 
@@ -84,13 +82,11 @@ class NewsListFragment : Fragment() {
         }
 
         newsListAdapter.setOnItemClickListener { newsId ->
-            Toast.makeText(view.context, "Item seleccionado ${newsId.toString()}", Toast.LENGTH_SHORT).show()
             val action = NewsListFragmentDirections.actionNewsListFragmentToNewsDetailFragment(newsId)
             findNavController().navigate(action)
         }
 
     }
-
 
 
     override fun onResume() {
@@ -102,5 +98,16 @@ class NewsListFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
+    /** Logo title Naranja */
+    private fun setImageViewLogo(isDarkMode: Boolean) {
+        if (isDarkMode) {
+            binding.imageViewLogo.setImageResource(R.drawable.naranja_b)
+        }else{
+            binding.imageViewLogo.setImageResource(R.drawable.naranja_w)
+        }
+    }
+
+
 
 }

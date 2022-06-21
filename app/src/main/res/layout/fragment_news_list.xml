@@ -5,44 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_bg_screen_color" >
+    android:background="@color/app_bg_color" >
 
     <LinearLayout
         android:id="@+id/linearLayout_topBar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:weightSum="8"
+        android:weightSum="20"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/searchView"
+        <ImageView
+            android:id="@+id/imageView_Logo"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="6"
-            android:background="@drawable/search_view_background" />
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/naranja_w"
+            android:layout_weight="18"/>
 
         <ImageView
             android:id="@+id/imageView_layoutList"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:src="@drawable/ic_list" />
 
         <ImageView
             android:id="@+id/imageView_darkMode"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:layout_marginStart="2dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:src="@drawable/ic_dark_mode" />
@@ -53,7 +53,8 @@
         android:id="@+id/recyclerView_news"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -61,17 +62,5 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_topBar"
         tools:listitem="@layout/layout_news_item"/>
 
-    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_newNota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/ic_add"
-        app:backgroundTint="@color/secondary_color"
-        android:tintMode="@color/on_secondary_color"
-        android:backgroundTint="@color/secondary_color"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,8 @@
 package com.sebapp.naranjaxchallenge.presentation.news_list
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.sebapp.naranjaxchallenge.domain.model.News
+import com.sebapp.naranjaxchallenge.domain.model.Results
 import com.sebapp.naranjaxchallenge.domain.repositories.NewsRepository
 import com.sebapp.naranjaxchallenge.domain.repositories.SettingsRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -29,8 +28,8 @@ constructor(
     private val settingsRepository: SettingsRepository
 ): ViewModel() {
 
-    private var _newsList = MutableStateFlow<List<News>>(emptyList())
-    val newsList: StateFlow<List<News>> = _newsList
+    private var _newsList = MutableStateFlow<List<Results>>(emptyList())
+    val newsList: StateFlow<List<Results>> = _newsList
 
     private var _darkMode = MutableStateFlow<Boolean>(false)
     val darkMode: StateFlow<Boolean> = _darkMode
@@ -49,7 +48,6 @@ constructor(
             if (newsList != null) {
                 _newsList.value = newsList
             }
-
         }.launchIn(viewModelScope)
 
     }

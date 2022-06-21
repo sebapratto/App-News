@@ -1,7 +1,9 @@
 package com.sebapp.naranjaxchallenge.presentation
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import com.sebapp.naranjaxchallenge.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +23,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        setWindowStyle()
+
     }
 
+    /** Set window style */
+    private fun setWindowStyle() {
+
+        val window = getWindow()
+        window.statusBarColor = Color.TRANSPARENT
+        window.navigationBarColor = Color.TRANSPARENT
+
+        if(android.os.Build.VERSION.SDK_INT > 29){
+            window.setDecorFitsSystemWindows(false)
+        }else{
+            window.addFlags(WindowManager.LayoutParams.FIRST_SYSTEM_WINDOW)
+        }
+
+    }
 
 }
