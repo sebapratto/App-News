@@ -20,13 +20,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView_Logo"
+        <TextView
+            android:id="@+id/textView_Title"
             android:layout_width="0dp"
             android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/naranja_w"
-            android:layout_weight="18"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/orange"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_weight="18"
+            android:text="@string/title_brand"
+            tools:text="Your Brand here..." />
 
         <ImageView
             android:id="@+id/imageView_layoutList"

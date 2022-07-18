@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/newsListFragment"
-        android:name="com.sebapp.naranjaxchallenge.presentation.news_list.NewsListFragment"
+        android:name="com.sebapp.appnews.presentation.news_list.NewsListFragment"
         android:label="NewsListFragment" >
 
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/newsDetailFragment_graph"
-        android:name="com.sebapp.naranjaxchallenge.presentation.news_detail.NewsDetailFragment"
+        android:name="com.sebapp.appnews.presentation.news_detail.NewsDetailFragment"
         android:label="NewsDetailFragment" >
 
         <argument

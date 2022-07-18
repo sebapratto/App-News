@@ -18,6 +18,7 @@
     <color name="note_title_color">#1E1E1E</color>
     <color name="note_content_color">#494747</color>
     <color name="date_content_color">#B62C00</color>
+    <color name="orange">#F57C00</color>
 
     <!--RED-->
     <color name="red001">#FAD2E1</color>
