@@ -14,9 +14,9 @@ The Guardian News Web
 ### Clean
 
 <h1 align="center">
-    <img src="https://github.com/sebapratto/app-news/blob/master/imageAssets/screen-w.jpg" width=439 height=812/>
+    <img src="https://github.com/sebapratto/App-News/tree/master/imageAssets/screen-w.jpg" width=439 height=812/>
     <br>
-    <img src="https://github.com/sebapratto/app-news/blob/master/imageAssets/screen-b.jpg" width=439 height=812/>
+    <img src="https://github.com/sebapratto/App-News/tree/master/imageAssets/screen-b.jpg" width=439 height=812/>
 </h1>
 
 ## Contact
